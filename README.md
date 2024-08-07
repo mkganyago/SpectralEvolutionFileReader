@@ -11,7 +11,7 @@ No installation needed. The functions in this repository use packages:"readr", "
 
 ```r
 source("./Scripts/SEDReader_function.R")
-
+```
 Functions
 read_sed(file_path)
 
@@ -28,19 +28,13 @@ A list with two elements:
     metadata: A named list containing the metadata extracted from the .sed file.
     data: A data frame containing the spectral data.
 
-Example Usage:
+# Example usage (see usage examples script)
 
 ```r
-library(readr)
-library(dplyr)
-library(stringr)
-library(ggplot2)
-
-# Example usage (see usage examples script)
 sed_data <- read_sed("path/to/your/file.sed")
 print(sed_data$metadata)
 head(sed_data$data)
-
+```
 
 read_sed_dir(folder_path)
 
@@ -74,10 +68,11 @@ for (file_name in names(example_sed_files)) {
     cat("Failed to read file:", file_name, "\n")
   }
 }
-
-Plotting Example
+```
+## Plotting Example
 
 After reading and having a glimpse of the data, you can plot the minimum, mean, and maximum reflectance values from all files:
+
 ```r
 library(ggplot2)
 library(dplyr)
@@ -102,12 +97,12 @@ ggplot(summary_data, aes(x = Wvl)) +
   labs(title = "Spectral Data Summary", x = "Wavelength (Wvl)", y = "Reflectance") +
   scale_color_manual(values = c("Min." = "blue", "Mean" = "green", "Max." = "red")) +
   theme_minimal()
-
-Contributing to the scripts
+```
+# Contributing to the scripts
 
 You can contribute to this repository by opening issues or submitting pull requests. Indicate what kind of changes you like to make when submitting a pull request. 
 
-Contact
+# Contact
 
 For any questions or suggestions, please contact Mahlatse Kganyago at mahlatse@uj.ac.za.
 
