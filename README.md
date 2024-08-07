@@ -7,7 +7,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## Installation
 
-No installation needed. The functions in this repository use packages:"readr", "stringr", "ggplot2", "dplyr", which will be installed in not already available on your computer. Simply, clone the repository or download and extract it, and run:
+No installation is needed. The functions in this repository use R-packages: `"readr"`, `"stringr"`, `"ggplot2"`, and `"dplyr"`, which will be installed if not already available on your computer. Simply, clone the repository or download and extract it, and source the `SEDReader_function.R` script as follows:
 
 ```r
 source("./Scripts/SEDReader_function.R")
@@ -15,20 +15,20 @@ source("./Scripts/SEDReader_function.R")
 
 ### Function 1
 
-read_sed(file_path)
+`read_sed(file_path)`
 
 Reads a single .sed file, extracts metadata, and returns a list containing both the metadata and spectral data.
 
 Arguments:
 
-    file_path: Character string specifying the path to the data file.
+`file_path`: Character string specifying the path to the data file.
 
 Returns:
 
 A list with two elements:
 
-    metadata: A named list containing the metadata extracted from the .sed file.
-    data: A data frame containing the spectral data.
+`metadata`: A named list containing the metadata extracted from the .sed file.
+`data`: A data frame containing the spectral data.
 
 ## Example usage 1 (see usage examples script)
 
@@ -39,20 +39,20 @@ head(sed_data$data)
 ```
 ### Function 2
 
-read_sed_dir(folder_path)
+`read_sed_dir(folder_path)`
 
-Reads all .sed files in a specified folder, extracts metadata, and returns a list containing both the metadata and spectral data for each file.
+Reads all `.sed` files in a specified folder, extracts metadata, and returns a list containing both the metadata and spectral data for each file.
 
 Arguments:
 
-    folder_path: Character string specifying the path to the folder containing .sed files.
+`folder_path`: Character string specifying the path to the folder containing `.sed` files.
 
 Returns:
 
 A list of lists, where each inner list contains:
 
-metadata: A named list containing the metadata extracted from the file.
-data: A data frame containing the spectral data.
+`metadata`: A named list containing the metadata extracted from the file.
+`data`: A data frame containing the spectral data.
 
 ## Example Usage 2 (see usage examples script)
 ```r
@@ -70,6 +70,7 @@ for (file_name in names(example_sed_files)) {
   }
 }
 ```
+
 ## Plotting summary statistics
 
 After reading and having a glimpse of the data, you can plot the minimum, mean, and maximum reflectance values from all files:
