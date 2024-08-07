@@ -12,7 +12,9 @@ No installation needed. The functions in this repository use packages:"readr", "
 ```r
 source("./Scripts/SEDReader_function.R")
 ```
-Functions
+
+### Function 1
+
 read_sed(file_path)
 
 Reads a single .sed file, extracts metadata, and returns a list containing both the metadata and spectral data.
@@ -28,13 +30,14 @@ A list with two elements:
     metadata: A named list containing the metadata extracted from the .sed file.
     data: A data frame containing the spectral data.
 
-# Example usage (see usage examples script)
+## Example usage 1 (see usage examples script)
 
 ```r
 sed_data <- read_sed("path/to/your/file.sed")
 print(sed_data$metadata)
 head(sed_data$data)
 ```
+### Function 2
 
 read_sed_dir(folder_path)
 
@@ -48,12 +51,10 @@ Returns:
 
 A list of lists, where each inner list contains:
 
-    metadata: A named list containing the metadata extracted from the file.
-    data: A data frame containing the spectral data.
+metadata: A named list containing the metadata extracted from the file.
+data: A data frame containing the spectral data.
 
-Example Usage (see usage examples script)
-
-# Example usage
+## Example Usage 2 (see usage examples script)
 ```r
 folder_path <- "./Example_data/SpectralEvolution_files/"
 example_sed_files <- read_sed_dir(folder_path)
@@ -69,14 +70,11 @@ for (file_name in names(example_sed_files)) {
   }
 }
 ```
-## Plotting Example
+## Plotting summary statistics
 
 After reading and having a glimpse of the data, you can plot the minimum, mean, and maximum reflectance values from all files:
 
 ```r
-library(ggplot2)
-library(dplyr)
-
 # Combine all data into one dataframe for plotting
 all_data <- bind_rows(lapply(example_sed_files, function(x) x$data), .id = "file_name")
 
@@ -98,6 +96,7 @@ ggplot(summary_data, aes(x = Wvl)) +
   scale_color_manual(values = c("Min." = "blue", "Mean" = "green", "Max." = "red")) +
   theme_minimal()
 ```
+
 # Contributing to the scripts
 
 You can contribute to this repository by opening issues or submitting pull requests. Indicate what kind of changes you like to make when submitting a pull request. 
