@@ -99,7 +99,8 @@ ggplot(summary_data, aes(x = Wvl)) +
   scale_color_manual(values = c("Min." = "blue", "Mean" = "green", "Max." = "red")) +
   theme_minimal()
 ```
-![image](https://github.com/user-attachments/assets/28f23951-19e6-42aa-a646-9f84c6fcdf9b)
+![image](https://github.com/user-attachments/assets/cd1eaa03-d14f-4e25-ad93-453d44263502)
+
 
 # Contributing to the scripts
 
