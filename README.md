@@ -37,6 +37,8 @@ sed_data <- read_sed("path/to/your/file.sed")
 print(sed_data$metadata)
 head(sed_data$data)
 ```
+![image](https://github.com/user-attachments/assets/e0ecaa63-fa1d-48c1-a3ee-b6c3b543f44c)
+
 ### Function 2
 
 `read_sed_dir(folder_path)`
